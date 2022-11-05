@@ -1,0 +1,4 @@
+# Do not commit
+database.py
+# Auto generated
+__pycache__
