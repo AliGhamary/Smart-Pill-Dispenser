@@ -1,4 +1,5 @@
 # Do not commit
 database.py
+boot.py
 # Auto generated
 __pycache__
