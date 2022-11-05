@@ -3,13 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta
-      name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-    />
-    <meta name="generator" content="Hugo 0.104.2" />
-    <title>Sticky Footer Template · Bootstrap v5.2</title>
+    <meta name="description" content="Pill Dispenser" />
+    <meta name="author" content="Ali Ghamary" />
+   
+    <title>Pill Dispenser</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sticky-footer/"> -->
     <link
@@ -207,7 +204,7 @@
 
   pills.forEach(pillId => {
     let pillElement = document.getElementById(pillId)
-    pillElement.innerHTML = localStorage.getItem(pillId) ?? "Set Pill"
+    pillElement.innerHTML = localStorage.getItem(pillId)
   })
 
 
