@@ -31,14 +31,12 @@
     <!-- <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico"> -->
 
     <link rel="apple-touch-icon" href="./favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="./favicons/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="./favicons/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="manifest" href="./favicons/site.webmanifest">
-    <!-- <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#712cf9"> -->
     <link rel="icon" href="./favicons/favicon.ico">
 
     <meta name="theme-color" content="#712cf9" />
@@ -118,61 +116,60 @@
 
         <div class="container mt-4">
 
-
          <div class="row">
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 class="card-title">Pill 1</h5>
+                  <h5 id="pill1" class="card-title">Pill 1</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 1</h6>
                   <p class="card-text">
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                   </p>
-                  <a href="#" class="btn btn-primary card-link">Card link</a>
-                  <a href="#" class="btn btn-secondary card-link">Another link</a>
+                  <a href="#" class="btn btn-primary card-link">Dispense</a>
+                  <a href="container.html?container=1" class="btn btn-secondary card-link">Edit</a>
                 </div>
               </div>
           </div>
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 class="card-title">Pill 2</h5>
+                  <h5 id="pill2" class="card-title">Pill 2</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 2</h6>
                   <p class="card-text">
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                   </p>
-                  <a href="#" class="btn btn-primary card-link">Card link</a>
-                  <a href="#" class="btn btn-secondary card-link">Another link</a>
+                  <a href="#" class="btn btn-primary card-link">Disepense</a>
+                  <a href="container.html?container=2" class="btn btn-secondary card-link">Edit</a>
                 </div>
               </div>
           </div>
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 class="card-title">Pill 3</h5>
+                  <h5 id="pill3" class="card-title">Pill 3</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 3</h6>
                   <p class="card-text">
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                   </p>
-                  <a href="#" class="btn btn-primary card-link">Card link</a>
-                  <a href="#" class="btn btn-secondary card-link">Another link</a>
+                  <a href="#" class="btn btn-primary card-link">Dispense</a>
+                  <a href="container.html?container=3" class="btn btn-secondary card-link">Edit</a>
                 </div>
               </div>
           </div>
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 class="card-title">Pill 4</h5>
+                  <h5 id="pill4" class="card-title">Pill 4</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 4</h6>
                   <p class="card-text">
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                   </p>
-                  <a href="#" class="btn btn-primary card-link">Card link</a>
-                  <a href="#" class="btn btn-secondary card-link">Another link</a>
+                  <a href="#" class="btn btn-primary card-link">Dispense</a>
+                  <a href="container.html?container=4" class="btn btn-secondary card-link">Edit</a>
                 </div>
               </div>
           </div>
@@ -188,3 +185,30 @@
     </footer> -->
   </body>
 </html>
+
+
+<script defer>
+  // Defer script so it executes after all the HTML elements are created.
+  // We cannot get an element by ID if the elment does not exist. 
+  
+  // Grab the HTML elements for the pill titles.
+  // let pill1 = document.getElementById("pill1")
+  // let pill2 = document.getElementById("pill2")
+  // let pill3 = document.getElementById("pill3")
+  // let pill4 = document.getElementById("pill4")
+
+  // // Retrieve the pill name from local storage.
+  // pill1.innerHTML = localStorage.getItem("pill1") ?? "Set Pill"
+  // pill2.innerHTML = localStorage.getItem("pill2") ?? "Set Pill"
+  // pill3.innerHTML = localStorage.getItem("pill3") ?? "Set Pill"
+  // pill4.innerHTML = localStorage.getItem("pill4") ?? "Set Pill"
+
+  let pills = ["pill1", "pill2", "pill3", "pill4"]
+
+  pills.forEach(pillId => {
+    let pillElement = document.getElementById(pillId)
+    pillElement.innerHTML = localStorage.getItem(pillId) ?? "Set Pill"
+  })
+
+
+</script>
