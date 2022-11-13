@@ -6,5 +6,6 @@ If you do, at least give us credit.
 
 ## Set up Nodejs with WebSocket
 
+* Go into `server` folder
 * Install npm dependencies with `npm i`
-* Run server with `node server/index.js`
+* Run server with `node index.js`

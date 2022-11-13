@@ -209,7 +209,7 @@
 </script>
 
 <script>
-    const ws = new WebSocket("wss://pilldispense.com:8082");
+    const ws = new WebSocket("ws://localhost:8082");
 
     ws.addEventListener("open",() => {
         console.log("We are connected!");
