@@ -7,9 +7,9 @@ import sys, os
 from xml.dom.expatbuilder import parseFragmentString
 from time import sleep
 from os.path import exists
-import RPi.GPIO as GPIO
-from adafruit_servokit import ServoKit
-kit = ServoKit(channels=16)
+#import RPi.GPIO as GPIO
+#from adafruit_servokit import ServoKit
+#kit = ServoKit(channels=16)
 
 
 class onKeyboard():
