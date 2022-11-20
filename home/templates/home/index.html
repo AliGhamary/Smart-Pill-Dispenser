@@ -102,7 +102,7 @@
       <div class="container">
         <h1 class="mt-5">Welcome to your pill dispenser</h1>
         <p class="lead">
-          Each container represents a pill.
+          Each container holds a different medication
         </p>
         <!-- <p>
           Use
@@ -118,7 +118,7 @@
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 id="pill1" class="card-title">Pill 1</h5>
+                  <h5 id="pill1" class="card-title">{{ pill1.name }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 1</h6>
                   <a href="#" class="btn btn-primary card-link">Dispense</a>
                   <a href="admin/home/pill/1" class="btn btn-secondary card-link">Edit</a>
@@ -128,7 +128,7 @@
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 id="pill2" class="card-title">Pill 2</h5>
+                  <h5 id="pill2" class="card-title">{{ pill2.name }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 2</h6>
                   <a href="#" class="btn btn-primary card-link">Dispense</a>
                   <a href="admin/home/pill/2" class="btn btn-secondary card-link">Edit</a>
@@ -138,7 +138,7 @@
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 id="pill3" class="card-title">Pill 3</h5>
+                  <h5 id="pill3" class="card-title">{{ pill3.name }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 3</h6>
                   <a href="#" class="btn btn-primary card-link">Dispense</a>
                   <a href="admin/home/pill/3" class="btn btn-secondary card-link">Edit</a>
@@ -148,7 +148,7 @@
           <div class="col-auto col-sm-6 mb-3">
             <div class="card" style="width: 18rem">
                 <div class="card-body">
-                  <h5 id="pill4" class="card-title">Pill 4</h5>
+                  <h5 id="pill4" class="card-title">{{ pill4.name }}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Container 4</h6>
                   <a href="#" class="btn btn-primary card-link">Dispense</a>
                   <a href="admin/home/pill/4" class="btn btn-secondary card-link">Edit</a>
@@ -185,12 +185,14 @@
   // pill3.innerHTML = localStorage.getItem("pill3") ?? "Set Pill"
   // pill4.innerHTML = localStorage.getItem("pill4") ?? "Set Pill"
 
+  {% comment %}
   let pills = ["pill1", "pill2", "pill3", "pill4"]
 
   pills.forEach(pillId => {
     let pillElement = document.getElementById(pillId)
     pillElement.innerHTML = localStorage.getItem(pillId)
   })
+  {% endcomment %}
 
 
 </script>

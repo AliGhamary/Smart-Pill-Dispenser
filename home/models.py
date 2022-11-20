@@ -19,4 +19,4 @@ class Pill(models.Model):
     )
 
     def __str__(self):
-        return self.name or 'None'
+        return self.name or 'Empty'
