@@ -5,3 +5,4 @@ boot.py
 __pycache__
 # Ingore npm modules
 node_modules
+venv
