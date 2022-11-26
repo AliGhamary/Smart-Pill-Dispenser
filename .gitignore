@@ -3,3 +3,5 @@ database.py
 boot.py
 # Auto generated
 __pycache__
+venv
+node_modules
