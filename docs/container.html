@@ -7,7 +7,7 @@
   <meta name="pill dispenser" content="Container" />
   <meta name="author" content="Ali Ghamary" />
   <meta name="generator" content="Hugo 0.104.2" />
-  <title>Sticky Footer Template · Bootstrap v5.2</title>
+  <title>Container</title>
 
   <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sticky-footer/"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -122,9 +122,9 @@
               <input type="range" class="form-range" id="minute-range" min="0" , max="59"> </label>
           </div>
 
-          <button class="btn btn-primary mt-3" type="button">Save</button>
-          <button class="btn btn-danger" type="button">Reset</button>
-          <button class="btn btn-success" type="button">Home</button>
+          <button class="btn btn-primary mt-3" type="button" onclick="savePillNameAndTime()">Save</button>
+          <button class="btn btn-danger" type="button" onclick="resetEverything()">Reset</button>
+          <a href="javascript:window.history.back()" class="btn btn-success" >Back</a>
         </div>
       </div>
 
@@ -139,7 +139,7 @@
   //Get the URL.
   const queryString = window.location.search;
   //Get the URL parameters.
-  const urlParams = new URLSearchParams(queryString);
+  const urlParams = new URLSearchParams(queryString)
   //Get the container number, e.g., ?container=1,?container=2, etc
   const containerNumber = urlParams.get('container')
   //Combine Pill with Container number, e.g., pill1, pill2, etc.
@@ -149,7 +149,8 @@
   //Set PillName in the Container.
   pillNameElement.value = pillName
 
-
+  document.getElementById("hour-range").value = localStorage.getItem("hours")
+  document.getElementById("minute-range").value = localStorage.getItem("minutes")
 
   function updateHoursRangeLabel() {
     let hoursElement = document.getElementById("hours")
@@ -162,6 +163,8 @@
     minutesElement.innerHTML = minutesRangeElement.value
   }
 
+
+
   const userEvents = ['click', 'pointermove', 'touchmove']
 
   const hoursRangeElement1 = document.getElementById('hour-range');
@@ -171,4 +174,23 @@
     minutesRangeElement2.addEventListener(e, (event) => updateMinutesRangeLabel());
   })
 
+  function savePillNameAndTime() {
+    let pillName = document.getElementById("pill-name").value
+    let hours = document.getElementById("hour-range").value
+    let minutes = document.getElementById("minute-range").value
+
+    localStorage.setItem(pillNameId, pillName)
+    localStorage.setItem('hours', hours)
+    localStorage.setItem('minutes', minutes)
+  }
+
+  function resetEverything(){
+    localStorage.setItem(pillNameId,'')
+    localStorage.setItem('hours', 24/2)
+    localStorage.setItem('minutes', 60/2)
+
+    document.getElementById("pill-name").value=''
+    document.getElementById("hour-range").value=24/2
+    document.getElementById("minute-range").value=60/2
+  }
 </script>
