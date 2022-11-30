@@ -604,8 +604,43 @@ class HomeScreen():
       #   sleep(1)
 
       #   pwm.stop()
-      #   GPIO.cleanup()   
-          
+      #   GPIO.cleanup()          
+    def motor_5(self):
+        print("Motor 5")
+
+        kit.servo[4].angle = 0
+        sleep(.5)
+        kit.servo[4].angle = 180
+        sleep(.5)
+        kit.servo[4].angle = 0
+
+    def motor_6(self):
+        print("Motor 6")
+
+        kit.servo[5].angle = 0
+        sleep(.5)
+        kit.servo[5].angle = 180
+        sleep(.5)
+        kit.servo[5].angle = 0
+
+    def motor_7(self):
+        print("Motor 7")
+
+        kit.servo[6].angle = 0
+        sleep(.5)
+        kit.servo[6].angle = 180
+        sleep(.5)
+        kit.servo[6].angle = 0
+
+    def motor_8(self):
+        print("Motor 8")
+
+        kit.servo[8].angle = 0
+        sleep(.5)
+        kit.servo[8].angle = 180
+        sleep(.5)
+        kit.servo[8].angle = 0            
+    
     def Home(self):
         self.w1.destroy()
         self.gui()
