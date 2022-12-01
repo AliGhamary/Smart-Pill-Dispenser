@@ -5,3 +5,5 @@ node_modules
 venv
 # Auto generated
 __pycache__
+venv
+node_modules
