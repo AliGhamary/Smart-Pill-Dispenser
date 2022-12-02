@@ -149,8 +149,8 @@
   //Set PillName in the Container.
   pillNameElement.value = pillName
 
-  document.getElementById("hour-range").value = localStorage.getItem("hours")
-  document.getElementById("minute-range").value = localStorage.getItem("minutes")
+  document.getElementById("hour-range").value = localStorage.getItem(`hours${containerNumber}`)
+  document.getElementById("minute-range").value = localStorage.getItem(`minutes${containerNumber}`)
 
   function updateHoursRangeLabel() {
     let hoursElement = document.getElementById("hours")
@@ -170,6 +170,7 @@
 
   const hoursRangeElement1 = document.getElementById('hour-range');
   const minutesRangeElement2 = document.getElementById("minute-range")
+
   userEvents.forEach(e => {
     hoursRangeElement1.addEventListener(e, (event) => updateHoursRangeLabel());
     minutesRangeElement2.addEventListener(e, (event) => updateMinutesRangeLabel());
@@ -181,8 +182,8 @@
     let minutes = document.getElementById("minute-range").value
 
     localStorage.setItem(pillNameId, pillName)
-    localStorage.setItem('hours', hours)
-    localStorage.setItem('minutes', minutes)
+    localStorage.setItem(`hours${containerNumber}`, hours)
+    localStorage.setItem(`minutes${containerNumber}`, minutes)
   }
 
   function resetEverything(){
