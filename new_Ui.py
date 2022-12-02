@@ -10,7 +10,11 @@ from os.path import exists
 #import RPi.GPIO as GPIO
 #from adafruit_servokit import ServoKit
 #kit = ServoKit(channels=16)
-
+      #GPIO SETUP
+channel = 17
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(channel, GPIO.IN)
+      
 
 class onKeyboard():
   def __init__(self,text_label=None,exp=""):
@@ -507,13 +511,13 @@ class HomeScreen():
 
          # new motors
          elif param==5:
-            self.motor_1()
+            self.motor_5()
          elif param==6:
-            self.motor_2()
+            self.motor_6()
          elif param==7:
-            self.motor_3()
+            self.motor_7()
          elif param==8:
-            self.motor_4()
+            self.motor_8()
     
     
     ## HAVE TO ADD NEW MOTORS FUNCTIONS
@@ -526,6 +530,7 @@ class HomeScreen():
        kit.servo[0].angle = 180
        sleep(.5)
        kit.servo[0].angle = 0
+
       #  GPIO.setmode(GPIO.BOARD)
       #  GPIO.setup(7,GPIO.OUT)
 
@@ -646,20 +651,14 @@ class HomeScreen():
         self.gui()
 
 class controller():
-   def sens():
-      #GPIO SETUP
-      channel = 17
-      GPIO.setmode(GPIO.BCM)
-      GPIO.setup(channel, GPIO.IN)
-      
-      def callback(channel):
-            if GPIO.input(channel):
-                     print ("Movement Detected!")
-            else:
-                     print ("Movement Detected!")
-      
-      GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=300)  # let us know when the pin goes HIGH or LOW
-      GPIO.add_event_callback(channel, callback)  # assign function to GPIO PIN, Run function on change
+   def callback(channel):
+         if GPIO.input(channel):
+                  print ("Movement Detected!")
+         else:
+                  print ("Movement Detected!")
+   
+   GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=300)  # let us know when the pin goes HIGH or LOW
+   GPIO.add_event_callback(channel, callback)  # assign function to GPIO PIN, Run function on change
 #This is a test
 
 if __name__ == '__main__':
