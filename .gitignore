@@ -1,5 +1,9 @@
 # Do not commit
 database.py
 boot.py
+node_modules
+venv
 # Auto generated
 __pycache__
+venv
+node_modules
