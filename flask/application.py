@@ -18,33 +18,33 @@ def container():
 @app.route('/1')
 def container1():
     kit.servo[0].angle = 0
-    sleep(.5)
+    sleep(1)
     kit.servo[0].angle = 180
-    sleep(.5)
+    sleep(1)
     kit.servo[0].angle = 0
 
 @app.route('/2')
 def container2():
     kit.servo[1].angle = 0
-    sleep(.5)
+    sleep(1)
     kit.servo[1].angle = 180
-    sleep(.5)
+    sleep(1)
     kit.servo[1].angle = 0
 
 @app.route('/3')
 def container3():
     kit.servo[2].angle = 0
-    sleep(.5)
+    sleep(1)
     kit.servo[2].angle = 180
-    sleep(.5)
+    sleep(1)
     kit.servo[2].angle = 0
 
 @app.route('/4')
 def container4():
     kit.servo[3].angle = 0
-    sleep(.5)
+    sleep(1)
     kit.servo[3].angle = 180
-    sleep(.5)
+    sleep(1)
     kit.servo[3].angle = 0
 
 if __name__ == "__main__":
