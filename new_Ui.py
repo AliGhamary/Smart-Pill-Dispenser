@@ -7,9 +7,9 @@ import sys, os
 from xml.dom.expatbuilder import parseFragmentString
 from time import sleep
 from os.path import exists
-#import RPi.GPIO as GPIO
-#from adafruit_servokit import ServoKit
-#kit = ServoKit(channels=16)
+import RPi.GPIO as GPIO
+from adafruit_servokit import ServoKit
+kit = ServoKit(channels=16)
       #GPIO SETUP
 channel = 17
 GPIO.setmode(GPIO.BCM)
@@ -526,9 +526,9 @@ class HomeScreen():
        print("Motor 1")
 
        kit.servo[0].angle = 0
-       sleep(.5)
+       sleep(1)
        kit.servo[0].angle = 180
-       sleep(.5)
+       sleep(1)
        kit.servo[0].angle = 0
 
       #  GPIO.setmode(GPIO.BOARD)
@@ -551,9 +551,9 @@ class HomeScreen():
        print("Motor 2")
 
        kit.servo[1].angle = 0
-       sleep(.5)
+       sleep(1)
        kit.servo[1].angle = 180
-       sleep(.5)
+       sleep(1)
        kit.servo[1].angle = 0
       #  GPIO.setmode(GPIO.BOARD)
       #  GPIO.setup(11,GPIO.OUT)
@@ -572,9 +572,9 @@ class HomeScreen():
     def motor_3(self):
         print("Motor 3")
         kit.servo[2].angle = 0
-        sleep(.5)
+        sleep(1)
         kit.servo[2].angle = 180
-        sleep(.5)
+        sleep(1)
         kit.servo[2].angle = 0
       #   GPIO.setmode(GPIO.BOARD)
       #   GPIO.setup(13,GPIO.OUT)
@@ -593,9 +593,9 @@ class HomeScreen():
         print("Motor 4")
 
         kit.servo[3].angle = 0
-        sleep(.5)
+        sleep(1)
         kit.servo[3].angle = 180
-        sleep(.5)
+        sleep(1)
         kit.servo[3].angle = 0
       #   GPIO.setmode(GPIO.BOARD)
       #   GPIO.setup(15,GPIO.OUT)
@@ -614,36 +614,36 @@ class HomeScreen():
         print("Motor 5")
 
         kit.servo[4].angle = 0
-        sleep(.5)
+        sleep(1)
         kit.servo[4].angle = 180
-        sleep(.5)
+        sleep(1)
         kit.servo[4].angle = 0
 
     def motor_6(self):
         print("Motor 6")
 
         kit.servo[5].angle = 0
-        sleep(.5)
+        sleep(1)
         kit.servo[5].angle = 180
-        sleep(.5)
+        sleep(1)
         kit.servo[5].angle = 0
 
     def motor_7(self):
         print("Motor 7")
 
         kit.servo[6].angle = 0
-        sleep(.5)
+        sleep(1)
         kit.servo[6].angle = 180
-        sleep(.5)
+        sleep(1)
         kit.servo[6].angle = 0
 
     def motor_8(self):
         print("Motor 8")
 
         kit.servo[8].angle = 0
-        sleep(.5)
+        sleep(1)
         kit.servo[8].angle = 180
-        sleep(.5)
+        sleep(1)
         kit.servo[8].angle = 0            
     
     def Home(self):
